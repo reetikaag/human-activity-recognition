@@ -1,0 +1,667 @@
+    1  mkdir softwares
+    2  cd softwares
+    3  wget https://repo.anaconda.com/archive/Anaconda3-2019.07-Linux-x86_64.sh
+    4  bash Anaconda3-2019.07-Linux-x86_64.sh
+    5  python3
+    6  sudo snap install jupyter
+    7  jupyter notebook --generate-config
+    8  jupyter notebook password
+    9  jupyter notebook
+   10  tmux
+   11  tmux ls
+   12  tmux a -t 0
+   13  tmux ls
+   14  pwd
+   15  conda install pytorch torchvision cuda80 -c soumith
+   16  y
+   17  tmux
+   18  jupyter notebook
+   19  pwd
+   20  ls
+   21  cd workspace/met3d/
+   22  ls
+   23  cd MedicalNet/
+   24  ls
+   25  pip install requirements.txt 
+   26  vim requirements.txt 
+   27  scp awsserver:/home/ubuntu/MedicalNet /Users/ragarwal/Downloads/MedicalNet_pytorch_files.zip
+   28  vim ~/.ssh/config
+   29  scp  ubuntu@ec2-52-14-238-86.us-east-2.compute.amazonaws.com:/home/ubuntu/Medical
+   30  man scp
+   31  pwd
+   32  ls
+   33  cd ../../
+   34  ls
+   35  mkdir nvidia_handgest
+   36  cd nvidia_handgest/
+   37  ls
+   38  LS
+   39  ls
+   40  pwd
+   41  scp  -i reetika-key-pair.pem /Users/ragarwal/Downloads/nvGesture_v1.7z.* ubuntu@ec2-52-14-238-86.us-east-2.compute.amazonaws.com:/home/ubuntu/workspace/nvidia_handgest
+   42  https://github.com/prasmussen/gdrive/releases/download/2.1.1/gdrive_2.1.1_linux_amd64.tar.gz
+   43  wget https://github.com/prasmussen/gdrive/releases/download/2.1.1/gdrive_2.1.1_linux_amd64.tar.gz
+   44  ll
+   45  gunzip gdrive_2.1.1_linux_amd64.tar.gz 
+   46  ls
+   47  untar -xvzf gdrive_2.1.1_linux_amd64.tar 
+   48  tar -xvzf gdrive_2.1.1_linux_amd64.tar 
+   49  tar -xvzf gdrive_2.1.1_linux_amd64.tar.gz
+   50  gls
+   51  ls
+   52  rm gdrive_2.1.1_linux_amd64.tar 
+   53  wget https://github.com/prasmussen/gdrive/releases/download/2.1.1/gdrive_2.1.1_linux_amd64.tar.gz
+   54  tar -xvzf gdrive_2.1.1_linux_amd64.tar.gz
+   55  ls
+   56  ./gdrive 
+   57  ls
+   58  ls -l gdrive
+   59  ./gdrive 
+   60  gdrive 
+   61  ./gdrive 
+   62  ls
+   63  chmod +x 777 gdrive
+   64  chmod  777 gdrive
+   65  ls
+   66  ./gdrive 
+   67  ll gdrive
+   68  ./gdrive 
+   69  go
+   70  gdrive
+   71  pwd
+   72  ls
+   73  mkdir workspace
+   74  cd workspace/
+   75  ls
+   76  mkdir met3d
+   77  cd met3d/
+   78  ls
+   79  cd ../../
+   80  ls
+   81  pwd
+   82  cd workspace/met3d/
+   83  ls
+   84  git clone https://github.com/Tencent/MedicalNet
+   85  jupyter notebook password
+   86  jupyter notebook --generate-config
+   87  jupyter notebook password
+   88  jupyter notebook
+   89  pwd
+   90  tmux
+   91  ls
+   92  du -h
+   93  LS
+   94  ls
+   95  du -sh
+   96  ls -lh
+   97  du -h --max-depth=1 .
+   98  cd anaconda3
+   99  ls
+  100  cd ..
+  101  rm -rf anaconda3
+  102  ll
+  103  pwd
+  104  tmux
+  105  pwd
+  106  du -sh
+  107  cd workspace/
+  108  ls
+  109  cd pretrained_model/
+  110  ls
+  111  ls -lh
+  112  cd ..
+  113  mkdir UCFdataset
+  114  cd UCFdataset
+  115  ls
+  116  ls -lh
+  117  cd ..
+  118  sudo apt-get install zip unzip
+  119  sudo apt-get update install zip unzip
+  120  jupyter notebook
+  121  pwd
+  122  pip install opencv-python
+  123  conda install opencv 
+  124  conda install -c https://conda.binstar.org/menpo opencv
+  125  ls
+  126  sudo pip3 install opencv-python
+  127  ls
+  128  cd workspace/
+  129  ls
+  130  cd UCFdataset/
+  131  ls
+  132  ls -lh
+  133  pwd
+  134  ls
+  135  wget https://github.com/prasmussen/gdrive/releases/download/2.1.1/gdrive_2.1.1_linux_amd64.tar.gz --no-check-certificate https://www.crcv.ucf.edu/data/UCF101/UCF101.rar
+  136  wget --no-check-certificate https://www.crcv.ucf.edu/data/UCF101/UCF101.rar
+  137  wget https://www.crcv.ucf.edu/data/UCF101/UCF101.rar
+  138  wget google.com
+  139  ping google.com
+  140  ping prysm.xyz
+  141  ls
+  142  ping prysm.xyz
+  143  ping google.com
+  144  pwd
+  145  ls -lh
+  146  ping google.com
+  147  ls
+  148  exit
+  149  pwd
+  150  tmux
+  151  df -hT
+  152  lsblk
+  153  sudo growpart /dev/xvda 1
+  154  ls
+  155  cd workspace
+  156  ls
+  157  cd UCF*
+  158  ls
+  159  rm -rf *
+  160  sudo growpart /dev/xvda 1
+  161  ls
+  162  tmux ls
+  163  tmux
+  164  sudo growpart /dev/xvda 1
+  165  lsblk
+  166  df -h
+  167  lsblk
+  168  df -h
+  169  sudo resize2fs /dev/xvda1
+  170  df -h
+  171  ping google.com
+  172  ping https://google.com
+  173  ping www.example.com
+  174  ifconfig
+  175  wget google.com
+  176  ls
+  177  exit
+  178  jupyter notebook
+  179  exit
+  180  tmux
+  181  tmux ls
+  182  tmux a -t 0
+  183  tmux a -t 1
+  184  tmux
+  185  tmux a -t 0
+  186  tmux ls
+  187  tmux a -t 2
+  188  ls
+  189  tmux a -t 0
+  190  tmux a -t 2
+  191  jupyter notebook
+  192  python3
+  193  pip3 install ipython
+  194  python3
+  195  bash
+  196  pwd
+  197  ls
+  198  cd workspace/
+  199  ls
+  200  cd ..
+  201  ls -lh
+  202  cd UCFdataset
+  203  cd workspace/UCFdataset/
+  204  ls
+  205  git clone https://github.com/harvitronix/five-video-classification-methods
+  206  cd five-video-classification-methods
+  207  pip install opencv-python install -r requirements.txt
+  208  which python
+  209  sudo apt install python-pip
+  210  pip install -r requirements.txt
+  211  pip install ffmpeg
+  212  cd data
+  213  wget --no-check-certificate https://www.crcv.ucf.edu/data/UCF101/UCF101.rar
+  214  unrar e UCF101.rar
+  215  sudo apt install unrar-free
+  216  unrar e UCF101.rar
+  217  ls
+  218  cd ..
+  219  ls
+  220  cd data
+  221  ls -lart
+  222  ls
+  223  cd ..
+  224  ls
+  225  rm -rf data
+  226  cd ..
+  227  ls
+  228  cd ..
+  229  ls
+  230  ls -lh
+  231  cd UCFdataset
+  232  ls
+  233  cd five-video-classification-methods
+  234  ls
+  235  wget -q https://git.io/JGc31 -O ucf101_top5.tar.gz
+  236  tar xf ucf101_top5.tar.gz
+  237  ls
+  238  gunzip ucf101_top5.tar.gz
+  239  tar xf ucf101_top5.tar.gz
+  240  ls
+  241  tar -xf ucf101_top5.tar.gz 
+  242  ls
+  243  tar -xvf archive.tar.gz
+  244  tar -xvf ucf101.tar.gz
+  245  tar -xvf ucf101_top5.tar.gz
+  246  ls
+  247  ls -lart
+  248  tar -xvf ucf101.tar.gz
+  249  tar -xvf ucf101_top5.tar.gz
+  250  ls
+  251  cd test
+  252  ls
+  253  cd ..
+  254  ls
+  255  cd test
+  256  ls
+  257  cd ..
+  258  cd train/
+  259  ls
+  260  cd ..
+  261  ls
+  262  cd ..
+  263  sudo apt-get install git
+  264  git
+  265  pip install -q git+https://github.com/tensorflow/docs
+  266  ls
+  267  cd five-video-classification-methods/
+  268  ls
+  269  python3
+  270  sudo apt-get install python-pip3
+  271  pip3
+  272  sudo apt install python3-pi
+  273  pip3 install -q git+https://github.com/tensorflow/docs
+  274  python3
+  275  ls
+  276  git
+  277  git which
+  278  pip3 install -q git+https://github.com/tensorflow/docs
+  279  cd ../..
+  280  ls
+  281  cd ..
+  282  ls
+  283  cd workspace/UCFdataset/five-video-classification-methods/
+  284  ls
+  285  pip3
+  286  jupyter notebook
+  287  pip3 install ipykernel --upgrade
+  288  python3 -m ipykernel install --user
+  289  jupyter notebook
+  290  which juypter
+  291  which jupyter
+  292  conda
+  293  pip3 install notebook
+  294  python3
+  295  which jupyter
+  296  rm /home/ubuntu/.local/bin/jupyter
+  297  pip3 install notebook
+  298  pip3 uninstall notebook
+  299  pip3 install notebook
+  300  jupyter notebook
+  301  which jupyter
+  302  jupyter notebook
+  303  ls
+  304  pwd
+  305  cd workspace/
+  306  ls
+  307  cd pretrained_model/
+  308  ls
+  309  conda install pytorch torchvision cudatoolkit=10.1 -c soumith
+  310  cd ../..
+  311  ls
+  312  cd softwares
+  313  ls
+  314  conda install pytorch torchvision cudatoolkit=10.1 -c soumith
+  315  wget https://repo.anaconda.com/archive/Anaconda3-2019.07-Linux-x86_64.sh
+  316  cd ../
+  317  ls
+  318  cd workspace/
+  319  ls
+  320  cd pretrained_model/
+  321  ls
+  322  cd ..
+  323  mkdir Resnet3D
+  324  cd Resnet3D/
+  325  ls
+  326  conda install pytorch torchvision cudatoolkit=10.1 -c soumith
+  327  cd ../../softwares/
+  328  ls
+  329  bash Anaconda3-2019.07-Linux-x86_64.sh
+  330  cd ../workspace/
+  331  cd Resnet3D/
+  332  ls
+  333  conda install pytorch torchvision cudatoolkit=10.1 -c soumith
+  334  pip install ffmpeg
+  335  pip install ffprobe
+  336  python3
+  337  git clone https://github.com/kenshohara/3D-ResNets-PyTorch
+  338  cd ../UCFdataset/
+  339  ls
+  340  cd five-video-classification-methods/
+  341  ls
+  342  cd train/
+  343  ls
+  344  cd ../../
+  345  cd ../
+  346  cd Resnet3D/
+  347  ls
+  348  cd 3D-ResNets-PyTorch/
+  349  ls
+  350  vim genjpgandjson.sh
+  351  mkdir jpg
+  352  mkdir annotation
+  353  ls
+  354  nano genjpgandjson.sh
+  355  chmod +x genjpgandjson.sh
+  356  ./genjpgandjson.sh 
+  357  cd jpg
+  358  ls
+  359  cd ..
+  360  python -m util_scripts.generate_video_jpgs ../../UCFdataset/five-video-classification-methods/train/ jpg/ ucf101
+  361  cd jpg
+  362  ls
+  363  python -m util_scripts.generate_video_jpgs ../../UCFdataset/
+  364  ls
+  365  cd datasets/
+  366  ls
+  367  cd ..
+  368  ls
+  369  cat genjpgandjson.sh 
+  370  python -m util_scripts.generate_video_jpgs ../../UCFdataset/five-video-classification-methods/train/ ./jpg/ ucf101
+  371  ll
+  372  cd jpg/
+  373  ls
+  374  cd ..
+  375  ls
+  376  cd ../../UCFdataset/five-video-classification-methods/train/
+  377  ls
+  378  cd ..
+  379  cd ../../
+  380  ls
+  381  cd Resnet3D/
+  382  ls
+  383  cd 3*
+  384  ls
+  385  python -m util_scripts.generate_video_jpgs /home/ubuntu/workspace/UCFdataset/five-video-classification-methods/train/ /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/jpg ucf101
+  386  ls
+  387  ls jpg/
+  388  ls
+  389  vim util_scripts/generate_video_jpgs.py 
+  390  python -m util_scripts.generate_video_jpgs /home/ubuntu/workspace/UCFdataset/five-video-classification-methods/train/ /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/jpg ucf101
+  391  vim util_scripts/generate_video_jpgs.py 
+  392  python -m util_scripts.generate_video_jpgs /home/ubuntu/workspace/UCFdataset/five-video-classification-methods/train/ /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/jpg ucf101
+  393  python -m util_scripts.generate_video_jpgs /home/ubuntu/workspace/UCFdataset/five-video-classification-methods/ /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/jpg ucf101
+  394  which python
+  395  /home/ubuntu/anaconda3/bin/python
+  396  tmux ls
+  397  tmux
+  398  tmux ls
+  399  tmux
+  400  tmux ls
+  401  tmux a -t 0
+  402  tmux a -t 2
+  403  tmux a -t 1
+  404  ls
+  405  cd workspace/
+  406  ls
+  407  cd Resnet3D/*
+  408  ls
+  409  python -m util_scripts.generate_video_jpgs /home/ubuntu/workspace/UCFdataset/five-video-classification-methods/ /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/jpg ucf101
+  410  vim util_scripts/generate_video_jpgs.py 
+  411  ffprobe_cmd
+  412  pip3 install ffprobe
+  413  python -m util_scripts.generate_video_jpgs /home/ubuntu/workspace/UCFdataset/five-video-classification-methods/ /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/jpg ucf101
+  414  ffmpeg
+  415  sudo apt update
+  416  sudo apt install ffmpeg
+  417  python -m util_scripts.generate_video_jpgs /home/ubuntu/workspace/UCFdataset/five-video-classification-methods/ /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/jpg ucf101
+  418  cd ../ls
+  419  pwd
+  420  cd workspace/Resnet3D/3D-ResNets-PyTorch/
+  421  ls -lh jpg/
+  422  ls -lh jpg/train/
+  423  cd ..
+  424  cd ../UCFdataset/five-video-classification-methods/
+  425  ;s
+  426  ls
+  427  cd train/
+  428  ls
+  429  cd ../test
+  430  ls
+  431  ls -lh
+  432  ls -lh | new.vi
+  433  cd ../train
+  434  ls
+  435  ls -lh
+  436  ls
+  437  ls > shit.dat
+  438  vim shit.dat 
+  439  ls
+  440  cd ..
+  441  ls
+  442  cd ../../
+  443  cd Resnet3D/3D-ResNets-PyTorch/
+  444  ls
+  445  python -m util_scripts.ucf101_json /home/ubuntu/UCFdataset/five-video-classification-methods/ucfTrainTestlist /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/jpg /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/annotation
+  446  ls /home/ubuntu/UCFdataset/five-video-classification-methods/ucfTrainTestlist/
+  447  python -m util_scripts.ucf101_json /home/ubuntu/workspace/UCFdataset/five-video-classification-methods/ucfTrainTestlist /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/jpg /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/annotation
+  448  ls jpg/
+  449  cd jpg/
+  450  ls
+  451  cd train/
+  452  ls
+  453  cd ../
+  454  python -m util_scripts.ucf101_json /home/ubuntu/workspace/UCFdataset/five-video-classification-methods/ucfTrainTestlist /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/jpg /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/annotation
+  455  python -m util_scripts.ucf101_json /home/ubuntu/workspace/UCFdataset/five-video-classification-methods/ucfTrainTestlist /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/jpg/train /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/annotation
+  456  cd ../../
+  457  cd Resnet3D/3D-ResNets-PyTorch/
+  458  pwd
+  459  python -m util_scripts.ucf101_json /home/ubuntu/workspace/UCFdataset/five-video-classification-methods/ucfTrainTestlist /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/jpg/train /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/annotation
+  460  cd jpg/train/
+  461  ls
+  462  mkdir CricketShot
+  463  mv v_CricketShot* /CricketShot/
+  464  mv v_CricketShot* CricketShot/
+  465  ls
+  466  ls CricketShot/
+  467  mkdir PlayingCello
+  468  mv v_PlayingCello* PlayingCello/
+  469  ls
+  470  mkdir Punch
+  471  mv v_Punch* Punch/
+  472  mkdir ShavingBeard
+  473  mv v_ShavingBeard* ShavingBeard/
+  474  ls -lh
+  475  mkdir TennisSwing
+  476  mv v_TennisSwing* TennisSwing/
+  477  ls
+  478  cd ../../
+  479  python -m util_scripts.ucf101_json /home/ubuntu/workspace/UCFdataset/five-video-classification-methods/ucfTrainTestlist /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/jpg/train /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/annotation
+  480  ls jpg/train/CricketShot/
+  481  vim ../../UCFdataset/five-video-classification-methods/ucfTrainTestlist/trainlist01.txt
+  482  vim ../../UCFdataset/five-video-classification-methods/shit.dat
+  483  cd ../../UCFdataset/five-video-classification-methods/
+  484  ls
+  485  cd train/
+  486  ls
+  487  cd ../../
+  488  cd ../Resnet3D/3D-ResNets-PyTorch/
+  489  ls
+  490  cd jpg/
+  491  ls
+  492  cd train/
+  493  ls
+  494  cd CricketShot/
+  495  ls
+  496  mv v_CricketShot_g08_* v_CricketShot_g01_*
+  497  mv -r v_CricketShot_g08_* v_CricketShot_g01_*
+  498  vim rename.sh
+  499  vim rename_file.py
+  500  cd ../..
+  501  ls
+  502  cd ..
+  503  ls
+  504  vim training.py 
+  505  cd jpg/train/CricketShot/
+  506  ls
+  507  ls -lh
+  508  cd v_CricketShot_g25_c01
+  509  ls
+  510  cd ..
+  511  cd ../..
+  512  ls
+  513  python -m util_scripts.ucf101_json /home/ubuntu/workspace/UCFdataset/five-video-classification-methods/ucfTrainTestlist /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/jpg/ /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/annotation
+  514  cd ..
+  515  python -m util_scripts.ucf101_json /home/ubuntu/workspace/UCFdataset/five-video-classification-methods/ucfTrainTestlist /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/jpg/ /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/annotation
+  516  python -m util_scripts.ucf101_json /home/ubuntu/workspace/UCFdataset/five-video-classification-methods/ucfTrainTestlist /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/jpg/train/ /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/annotation
+  517  python -m util_scripts.ucf101_json /home/ubuntu/workspace/UCFdataset/five-video-classification-methods/ucfTrainTestlist /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/jpg/test/ /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/annotation
+  518  cd jpg/
+  519  ls
+  520  mkdir new
+  521  cp train/* new 
+  522  cp -r train/* new 
+  523  ls new/
+  524  cp -r test/CricketShot/* new/CricketShot/
+  525  cp -r test/v_CricketShot* new/CricketShot/
+  526  ls new/CricketShot/
+  527  cp -r test/PlayingCello/* new/PlayingCello/
+  528  cp -r test/v_PlayingCello* new/PlayingCello/
+  529  cp -r test/v_Punch* new/Punch/
+  530  cp -r test/v_ShavingBeard* new/ShavingBeard/
+  531  cp -r test/v_TennisSwing* new/TennisSwing/
+  532  ls
+  533  cd new
+  534  ls
+  535  python -m util_scripts.ucf101_json /home/ubuntu/workspace/UCFdataset/five-video-classification-methods/ucfTrainTestlist /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/jpg/new/ /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/annotation
+  536  cd ..
+  537  python -m util_scripts.ucf101_json /home/ubuntu/workspace/UCFdataset/five-video-classification-methods/ucfTrainTestlist /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/jpg/new/ /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/annotation
+  538  cd ..
+  539  python -m util_scripts.ucf101_json /home/ubuntu/workspace/UCFdataset/five-video-classification-methods/ucfTrainTestlist /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/jpg/new/ /home/ubuntu/workspace/Resnet3D/3D-ResNets-PyTorch/annotation
+  540  ls annotation/
+  541  vim train_small_ucf101.sh
+  542  cp train_small_ucf101.sh trial.sh
+  543  vim trial.sh
+  544  ls
+  545  bash trial.sh
+  546  chmod trial.sh
+  547  chmod +x trial.sh
+  548  bash trial.sh
+  549  vim main.py
+  550  pwd
+  551  ls
+  552  cd jpg/
+  553  cd new/
+  554  ls
+  555  cd CricketShot/
+  556  ls
+  557  cd v_CricketShot_g20_c07
+  558  ls
+  559  cd../../..
+  560  cd ../../../
+  561  cd ..
+  562  ls
+  563  mkdir results
+  564  ls annotation/
+  565  vim trial.sh
+  566  bash trial.sh
+  567  ls -lh annotation/
+  568  cd ucf101_01.json
+  569  vim ucf101_01.json
+  570  ls
+  571  cd annotation/
+  572  ls
+  573  ls -lh
+  574  cd ucf101_01.json
+  575  vim ucf101_0
+  576  vim ucf101_01.json 
+  577  vim trial.sh
+  578  cd ..
+  579  vim trial.sh
+  580  ls
+  581  cd workspace/
+  582  ls
+  583  cd Resnet3D/
+  584  ls
+  585  cd ..
+  586  ls
+  587  https://github.com/reetikaag/human-activity-recognition.git
+  588  git clone https://github.com/reetikaag/human-activity-recognition.git
+  589  ls
+  590  cd human-activity-recognition/
+  591  ls
+  592  vim README.md 
+  593  git status
+  594  git add .
+  595  git status
+  596  git commit -m 'changed readme'
+  597  git push origin master
+  598  git config --global --edit
+  599  git commit --amend --reset-author
+  600  git push origin master
+  601  git push origin main
+  602  history
+  603  gedit
+  604  sudo apt install gedit
+  605  gedit
+  606  sudo apt install x11-apps
+  607  sudo vi /etc/ssh/sshd_config
+  608  sudo cat /etc/ssh/sshd_config |grep -i X11Forwarding
+  609  sudo service ssh restart
+  610  gedit
+  611  xauth list
+  612  sudo vi /etc/ssh/sshd_config
+  613  sudo service ssh restart
+  614  xauth list
+  615  exit
+  616  tmux ls
+  617  tmux
+  618  exit
+  619  gedit
+  620  sudo service ssh restart
+  621  gedit
+  622  exit
+  623  gedit
+  624  exit
+  625  ls
+  626  du - f
+  627  du -f
+  628  du -h
+  629  ls
+  630  cd 3D-ResNets-PyTorch/
+  631  ls
+  632  cd datasets/
+  633  ls
+  634  cd ..
+  635  ls
+  636  cd jpg/
+  637  ls
+  638  cd train/
+  639  du -sh
+  640  cd ..
+  641  cd test/
+  642  du -sh
+  643  cd ..
+  644  ls
+  645  cd ..
+  646  ls
+  647  exit
+  648  ls
+  649  cd ..
+  650  ls
+  651  cd Resnet3D/3D-ResNets-PyTorch/
+  652  ls
+  653  ls *.sh
+  654  du -sh
+  655  ls
+  656  cd jpg/
+  657  ls
+  658  vim trial.sh
+  659  cd ..
+  660  cd ../../human-activity-recognition/
+  661  ls
+  662  cd 3D-ResNets-PyTorch/
+  663  ls
+  664  rm -rf jpg
+  665  vim genjpgandjson.sh 
+  666  history
+  667  history > all

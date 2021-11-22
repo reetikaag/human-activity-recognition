@@ -1,0 +1,11 @@
+#Random files
+LICENSE
+README.md
+__pycache__
+data
+annotation_Jester
+annotation_Kinetics
+annotation_UCF101
+results
+run-jester.sh
+run-kinetics.sh

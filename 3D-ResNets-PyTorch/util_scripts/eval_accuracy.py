@@ -17,7 +17,7 @@ def load_ground_truth(ground_truth_path, subset):
         data = json.load(f)
 
     class_labels_map = get_class_labels(data)
-
+    print(class_labels_map)
     ground_truth = []
     for video_id, v in data['database'].items():
         if subset != v['subset']:
@@ -86,7 +86,8 @@ if __name__ == '__main__':
         help='ignore nonexistent videos in result')
 
     args = parser.parse_args()
-
+    print(args.ground_truth_path)
+    print(args.result_path)
     accuracy = evaluate(args.ground_truth_path, args.result_path, args.subset,
                         args.k, args.ignore)
 

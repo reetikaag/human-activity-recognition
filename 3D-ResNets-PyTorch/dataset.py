@@ -19,6 +19,11 @@ def get_training_data(video_path,
                       spatial_transform=None,
                       temporal_transform=None,
                       target_transform=None):
+    print(video_path)
+    print(annotation_path)
+    print(dataset_name)
+    print(input_type)
+    print(file_type)
     assert dataset_name in [
         'kinetics', 'activitynet', 'ucf101', 'hmdb51', 'mit'
     ]

@@ -4,7 +4,7 @@ from functools import partialmethod
 
 import torch
 import numpy as np
-from sklearn.metrics import precision_recall_fscore_support
+from sklearn.metrics import precision_recall_fscore_support, confusion_matrix, classification_report
 
 
 class AverageMeter(object):
@@ -69,6 +69,26 @@ def calculate_precision_and_recall(outputs, targets, pos_label=1):
 
         return precision[pos_label], recall[pos_label]
 
+def calc_ytrue_ypred(outputs, targets):
+    with torch.no_grad():
+        _, pred = outputs.topk(1, 1, largest=True, sorted=True)
+        y_pred = pred.t().tolist()[0]
+        y_true = targets.view(1, -1).tolist()[0]
+        #print("y_true = " + str(y_true))
+        #print("y_pred = " + str(y_pred))
+        return y_true, y_pred
+
+def calculate_confusion_matrix(all_y_true, all_y_pred):
+    with torch.no_grad():
+        #print(type(all_y_true))
+        #print(all_y_true)
+        conf_mtx = confusion_matrix(all_y_true, all_y_pred)
+        return conf_mtx
+
+def calculate_classification_metrics(all_y_true, all_y_pred, n_classes):
+    with torch.no_grad():
+        calc_metrics = classification_report(all_y_true, all_y_pred, digits = n_classes)
+        return calc_metrics
 
 def worker_init_fn(worker_id):
     torch_seed = torch.initial_seed()

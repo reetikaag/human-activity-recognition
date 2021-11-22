@@ -5,7 +5,7 @@ import sys
 import torch
 import torch.distributed as dist
 
-from utils import AverageMeter, calculate_accuracy
+from utils import AverageMeter, calculate_accuracy, calc_ytrue_ypred, calculate_confusion_matrix, calculate_classification_metrics
 
 
 def val_epoch(epoch,
@@ -15,7 +15,8 @@ def val_epoch(epoch,
               device,
               logger,
               tb_writer=None,
-              distributed=False):
+              distributed=False,
+              conf_matrix_dict={}):
     print('validation at epoch {}'.format(epoch))
 
     model.eval()
@@ -25,6 +26,8 @@ def val_epoch(epoch,
     losses = AverageMeter()
     accuracies = AverageMeter()
 
+    all_y_true = []
+    all_y_pred = []
     end_time = time.time()
 
     with torch.no_grad():
@@ -35,6 +38,10 @@ def val_epoch(epoch,
             outputs = model(inputs)
             loss = criterion(outputs, targets)
             acc = calculate_accuracy(outputs, targets)
+            
+            y_true, y_pred = calc_ytrue_ypred(outputs, targets)
+            all_y_true.extend(y_true)
+            all_y_pred.extend(y_pred)
 
             losses.update(loss.item(), inputs.size(0))
             accuracies.update(acc, inputs.size(0))
@@ -54,6 +61,12 @@ def val_epoch(epoch,
                       data_time=data_time,
                       loss=losses,
                       acc=accuracies))
+    
+        conf_matrix = calculate_confusion_matrix(all_y_true, all_y_pred)
+        classify_metrics = calculate_classification_metrics(all_y_true, all_y_pred, 9)
+        print("classify_metrics"+ classify_metrics)
+        print("conf_mtx = " + str(conf_matrix))
+        conf_matrix_dict[epoch] = conf_matrix
 
     if distributed:
         loss_sum = torch.tensor([losses.sum],

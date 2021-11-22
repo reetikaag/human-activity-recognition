@@ -81,7 +81,7 @@ if __name__ == '__main__':
                         default=None,
                         type=Path,
                         help='Directory path of dst json file.')
-
+    print(args.dir_path)
     args = parser.parse_args()
 
     for split_index in range(1, 4):

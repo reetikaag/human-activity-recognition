@@ -30,7 +30,7 @@ from utils import Logger, worker_init_fn, get_lr
 from training import train_epoch
 from validation import val_epoch
 import inference
-
+import csv
 
 def json_serial(obj):
     if isinstance(obj, Path):
@@ -48,11 +48,15 @@ def get_opt():
             opt.resume_path = opt.root_path / opt.resume_path
         if opt.pretrain_path is not None:
             opt.pretrain_path = opt.root_path / opt.pretrain_path
-
+    print(opt.video_path)
+    print(opt.annotation_path)
+    print(opt.result_path)
+    print(opt.pretrain_path)
     if opt.pretrain_path is not None:
         opt.n_finetune_classes = opt.n_classes
         opt.n_classes = opt.n_pretrain_classes
-
+        print(opt.n_finetune_classes)
+        print(opt.n_classes)
     if opt.output_topk <= 0:
         opt.output_topk = opt.n_classes
 
@@ -356,6 +360,8 @@ def main_worker(index, opt):
     criterion = CrossEntropyLoss().to(opt.device)
 
     if not opt.no_train:
+        print(opt)
+        print(parameters)
         (train_loader, train_sampler, train_logger, train_batch_logger,
          optimizer, scheduler) = get_train_utils(opt, parameters)
         if opt.resume_path is not None:
@@ -375,6 +381,8 @@ def main_worker(index, opt):
                                       purge_step=opt.begin_epoch)
     else:
         tb_writer = None
+    
+    conf_matrix_dict = {}
 
     prev_val_loss = None
     for i in range(opt.begin_epoch, opt.n_epochs + 1):
@@ -394,7 +402,7 @@ def main_worker(index, opt):
         if not opt.no_val:
             prev_val_loss = val_epoch(i, val_loader, model, criterion,
                                       opt.device, val_logger, tb_writer,
-                                      opt.distributed)
+                                      opt.distributed, conf_matrix_dict)
 
         if not opt.no_train and opt.lr_scheduler == 'multistep':
             scheduler.step()
@@ -410,6 +418,10 @@ def main_worker(index, opt):
                             inference_class_names, opt.inference_no_average,
                             opt.output_topk)
 
+
+    conf_matrix_file = csv.writer(open("conf_mtxs.csv","w+"))
+    for key,val in conf_matrix_dict.items():
+        conf_matrix_file.writerow([key,val])
 
 if __name__ == '__main__':
     opt = get_opt()

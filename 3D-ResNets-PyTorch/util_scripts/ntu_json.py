@@ -56,8 +56,8 @@ def convert_ucf101_csv_to_json(label_csv_path, train_csv_path, val_csv_path,
             label = v['annotations']['label']
         else:
             label = 'test'
-
-        video_path = video_dir_path / label / k
+        k1 = k
+        video_path = video_dir_path / label / k1
         n_frames = get_n_frames(video_path)
         v['annotations']['segment'] = (1, n_frames + 1)
 
@@ -81,10 +81,9 @@ if __name__ == '__main__':
                         default=None,
                         type=Path,
                         help='Directory path of dst json file.')
-    print(args.dir_path)
     args = parser.parse_args()
 
-    for split_index in range(1, 4):
+    for split_index in range(1, 2):
         label_csv_path = args.dir_path / 'classInd.txt'
         train_csv_path = args.dir_path / 'trainlist0{}.txt'.format(split_index)
         val_csv_path = args.dir_path / 'testlist0{}.txt'.format(split_index)

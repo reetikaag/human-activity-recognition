@@ -52,6 +52,7 @@ def train_epoch(epoch, data_loader, model, criterion, optimizer, opt,
             'lr': optimizer.param_groups[0]['lr']
         })
         if i % 10 ==0:
+            print("--training--")
             print('Epoch: [{0}][{1}/{2}]\t lr: {lr:.5f}\t'
                   'Time {batch_time.val:.3f} ({batch_time.avg:.3f})\t'
                   'Data {data_time.val:.3f} ({data_time.avg:.3f})\t'
@@ -76,13 +77,13 @@ def train_epoch(epoch, data_loader, model, criterion, optimizer, opt,
         'lr': optimizer.param_groups[0]['lr']
     })
 
-    #if epoch % opt.checkpoint == 0:
-    #    save_file_path = os.path.join(opt.result_path,
-    #                                  'save_{}.pth'.format(epoch))
-    #    states = {
-    #        'epoch': epoch + 1,
-    #        'arch': opt.arch,
-    #        'state_dict': model.state_dict(),
-    #        'optimizer': optimizer.state_dict(),
-    #    }
-    #    torch.save(states, save_file_path)
+    if epoch % opt.checkpoint == 0:
+        save_file_path = os.path.join(opt.result_path,
+                                      'save_{}.pth'.format(epoch))
+        states = {
+            'epoch': epoch + 1,
+            'arch': opt.arch,
+            'state_dict': model.state_dict(),
+            'optimizer': optimizer.state_dict(),
+        }
+        torch.save(states, save_file_path)

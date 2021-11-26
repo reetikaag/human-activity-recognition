@@ -7,10 +7,12 @@ import sys
 import json
 
 from utils import AverageMeter
-
+from saliency import get_saliency_map, plot_saliency
 
 def calculate_video_results(output_buffer, video_id, test_results, class_names):
+    #print("new video")
     video_outputs = torch.stack(output_buffer)
+    #print(video_outputs)
     average_scores = torch.mean(video_outputs, dim=0)
     sorted_scores, locs = torch.topk(average_scores, k=3)
 
@@ -52,6 +54,9 @@ def test(data_loader, model, opt, class_names):
                 output_buffer = []
             output_buffer.append(outputs[j].data.cpu())
             previous_video_id = targets[j]
+
+        #sal_map = get_saliency_map(opt, model, inputs, targets)
+        #plot_saliency(sal_map, i, inputs, targets)
 
         if (i % 100) == 0:
             with open(

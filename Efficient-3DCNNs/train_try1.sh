@@ -1,20 +1,24 @@
 python main.py --root_path /home/shared/workspace/Resnet3D/ \
 	--video_path 3D-ResNets-PyTorch/data/jpg \
 	--annotation_path 3D-ResNets-PyTorch/data/ntu_01.json \
-	--result_path Efficient-3DCNNs/data/mobilenetv2_lr1e2_bs32 \
-	--pretrain_path 3D-ResNets-PyTorch/data/models/kinetics_mobilenetv2_1.0x_RGB_16_best.pth \
+	--result_path Efficient-3DCNNs/data/results/r3d101_KM \
+	--pretrain_path 3D-ResNets-PyTorch/data/models/r3d101_K_200ep.pth \
 	--dataset ucf101 \
 	--n_classes 600 \
 	--n_finetune_classes 9 \
-	--ft_portion last_layer \
-	--model mobilenetv2 \
-	--groups 3 \
-	--width_mult 1.0 \
-	--train_crop random \
-	--learning_rate 0.01 \
-	--sample_duration 16 \
-	--downsample 1 \
-	--batch_size 16 \
-	--n_threads 16 \
-	--checkpoint 1 \
-	--n_val_samples 1 \
+        --ft_portion last_layer \
+        --model resnet \
+        --resnet_shortcut B \
+        --groups 3 \
+        --model_depth 101 \
+        --learning_rate 0.001 \
+        --sample_duration 16 \
+        --downsample 2 \
+        --n_scales 5 \
+        --scale_step 0.97 \
+        --n_threads 16 \
+        --checkpoint 10 \
+        --n_val_samples 1 \
+        --train_crop center \
+        --batch_size 64 \
+        --n_epochs 10 \

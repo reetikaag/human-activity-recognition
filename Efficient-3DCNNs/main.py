@@ -69,8 +69,7 @@ if __name__ == '__main__':
         elif opt.train_crop == 'corner':
             crop_method = MultiScaleCornerCrop(opt.scales, opt.sample_size)
         elif opt.train_crop == 'center':
-            crop_method = MultiScaleCornerCrop(
-                opt.scales, opt.sample_size, crop_positions=['c'])
+            crop_method = MultiScaleCornerCrop(opt.scales, opt.sample_size, crop_positions=['c'])
         spatial_transform = Compose([
             RandomHorizontalFlip(),
             #RandomRotate(),
@@ -83,7 +82,7 @@ if __name__ == '__main__':
             #SpatialElasticDisplacement(),
             ToTensor(opt.norm_value), norm_method
         ])
-        temporal_transform = TemporalRandomCrop(opt.sample_duration, opt.downsample)
+        temporal_transform = TemporalCenterCrop(opt.sample_duration, opt.downsample)
         target_transform = ClassLabel()
         training_data = get_training_set(opt, spatial_transform,
                                          temporal_transform, target_transform)
@@ -177,11 +176,13 @@ if __name__ == '__main__':
     if opt.test:
         spatial_transform = Compose([
             Scale(int(opt.sample_size / opt.scale_in_test)),
-            CornerCrop(opt.sample_size, opt.crop_position_in_test),
+            CenterCrop(opt.sample_size),
             ToTensor(opt.norm_value), norm_method
         ])
         # temporal_transform = LoopPadding(opt.sample_duration, opt.downsample)
-        temporal_transform = TemporalRandomCrop(opt.sample_duration, opt.downsample)
+        # Hard-coded opt.downsample to be 1
+        # Changed RandomCrop to CenterCrop for spatial and temporal transform
+        temporal_transform = TemporalCenterCrop(opt.sample_duration, 1)
         target_transform = VideoID()
 
         test_data = get_test_set(opt, spatial_transform, temporal_transform,

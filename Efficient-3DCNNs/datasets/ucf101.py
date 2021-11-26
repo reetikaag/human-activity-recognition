@@ -189,7 +189,7 @@ class UCF101(data.Dataset):
             self.spatial_transform.randomize_parameters()
             clip = [self.spatial_transform(img) for img in clip]
         clip = torch.stack(clip, 0).permute(1, 0, 2, 3)
-
+        #print(clip)
         target = self.data[index]
         if self.target_transform is not None:
             target = self.target_transform(target)

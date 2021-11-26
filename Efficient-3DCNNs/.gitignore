@@ -9,3 +9,5 @@ annotation_UCF101
 results
 run-jester.sh
 run-kinetics.sh
+debug
+.ipynb_checkpoints/

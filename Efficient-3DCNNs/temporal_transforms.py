@@ -78,9 +78,10 @@ class TemporalCenterCrop(object):
         clip_duration = self.size * self.downsample
 
         center_index = len(frame_indices) // 2
+        #print(center_index)
+        #Made minimum frame 4 to remove the initial static frames
         begin_index = max(0, center_index - (clip_duration // 2))
         end_index = min(begin_index + clip_duration, vid_duration)
-
         out = frame_indices[begin_index:end_index]
 
         for index in out:
@@ -89,7 +90,7 @@ class TemporalCenterCrop(object):
             out.append(index)
 
         selected_frames = [out[i] for i in range(0, clip_duration, self.downsample)]
-
+        #print(len(frame_indices),selected_frames)
         return selected_frames
 
 
@@ -114,10 +115,8 @@ class TemporalRandomCrop(object):
         Returns:
             list: Cropped frame indices.
         """
-
         vid_duration  = len(frame_indices)
         clip_duration = self.size * self.downsample
-
         rand_end = max(0, vid_duration - clip_duration - 1)
         begin_index = random.randint(0, rand_end)
         end_index = min(begin_index + clip_duration, vid_duration)
@@ -130,5 +129,5 @@ class TemporalRandomCrop(object):
             out.append(index)
 
         selected_frames = [out[i] for i in range(0, clip_duration, self.downsample)]
-
+        #print(len(frame_indices),selected_frames)
         return selected_frames

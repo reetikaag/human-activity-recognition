@@ -36,7 +36,7 @@ def val_epoch(epoch, data_loader, model, criterion, opt, logger):
 
         batch_time.update(time.time() - end_time)
         end_time = time.time()
-
+        print("--validation--")
         print('Epoch: [{0}][{1}/{2}]\t'
               'Time {batch_time.val:.5f} ({batch_time.avg:.5f})\t'
               'Data {data_time.val:.5f} ({data_time.avg:.5f})\t'

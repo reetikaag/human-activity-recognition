@@ -129,7 +129,7 @@ def generate_model(opt):
             print('loading pretrained model {}'.format(opt.pretrain_path))
             pretrain = torch.load(opt.pretrain_path, map_location=torch.device('cpu'))
             assert opt.arch == pretrain['arch']
-            model.load_state_dict(pretrain['state_dict'])
+            model.load_state_dict(pretrain['state_dict'], strict=False)
 
             if opt.model in  ['mobilenet', 'mobilenetv2', 'shufflenet', 'shufflenetv2']:
                 model.module.classifier = nn.Sequential(

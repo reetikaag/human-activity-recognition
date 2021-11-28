@@ -182,7 +182,7 @@ if __name__ == '__main__':
         # temporal_transform = LoopPadding(opt.sample_duration, opt.downsample)
         # Hard-coded opt.downsample to be 1
         # Changed RandomCrop to CenterCrop for spatial and temporal transform
-        temporal_transform = TemporalCenterCrop(opt.sample_duration, 1)
+        temporal_transform = TemporalCenterCrop(opt.sample_duration, opt.downsample)
         target_transform = VideoID()
 
         test_data = get_test_set(opt, spatial_transform, temporal_transform,
@@ -194,7 +194,6 @@ if __name__ == '__main__':
             num_workers=opt.n_threads,
             pin_memory=True)
         test.test(test_loader, model, opt, test_data.class_names)
-
 
 
 

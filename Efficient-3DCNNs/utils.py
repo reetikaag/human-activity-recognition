@@ -55,13 +55,15 @@ def load_value_file(file_path):
 
 def calculate_accuracy(output, target, topk=(1,)):
     """Computes the precision@k for the specified values of k"""
+    #print(output,target)
     maxk = max(topk)
     batch_size = target.size(0)
 
     _, pred = output.topk(maxk, 1, True, True)
     pred = pred.t()
     correct = pred.eq(target.view(1, -1).expand_as(pred))
-
+    #print(pred)
+    #print(target.view(1,-1))
     res = []
     for k in topk:
         #print(correct[:k])

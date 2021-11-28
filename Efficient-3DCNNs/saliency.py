@@ -11,6 +11,7 @@ from torch.backends import cudnn
 import torchvision
 import csv
 import matplotlib.pyplot as plt
+import cv2
 
 ACTION_NAMES = ["sneezeCough", "staggering", "fallingDown",
                 "headache", "chestPain", "backPain",
@@ -35,13 +36,10 @@ def get_saliency_map(opt, model, X, y):
     # Make input tensors require gradient
     X.requires_grad_()
     saliency = None
-    #print(y)
     # Convert y (targets) into labels
     labels = []
     for elem in y:
-        #print(elem)
         left, _ = elem.split("_")
-        #print(left)
         label = int(left[-2:]) - 41
         labels.append(label)
 
@@ -68,12 +66,11 @@ def plot_saliency(sal_map, i, inputs, targets):
         sal_map = sal_map.numpy()
         inputs = inputs.detach().numpy()
         # 1. Average over saliency map dimensions
-        avg_sal_map = np.mean(sal_map, axis=1)
+        avg_sal_map = np.mean(sal_map[:,3:,:,:], axis=1)
 
         # 2. Average over image dimensions
-        avg_inputs = np.mean(inputs, axis=2)
+        avg_inputs = np.mean(inputs[:,:,3:,:,:], axis=2)
         max_inputs = np.mean(avg_inputs, axis=1)
-
         # 3. Convert targets into labels
         labels = []
         for elem in targets:
@@ -82,16 +79,32 @@ def plot_saliency(sal_map, i, inputs, targets):
         y = torch.LongTensor(labels)
         # 3. Make a plt figure and put the images in their correct positions and save to file
         N = sal_map.shape[0]
-        for i in range(N):
-            plt.subplot(2, N, i + 1)
-            plt.imshow(max_inputs[i])
-            plt.axis('off')
-            plt.title(ACTION_NAMES[y[i]])
-            plt.subplot(2, N, N + i + 1)
-            plt.imshow(avg_sal_map[i], cmap=plt.cm.hot)
-            plt.axis('off')
+        for j in range(N):
+            fig = plt.figure(figsize=(9,9))
+            ax = fig.add_subplot(2, N, j + 1)
+            ax.imshow(max_inputs[j])
+            #plt.imshow(max_inputs[j])
+            ax.axis('off')
+            fig.suptitle(ACTION_NAMES[y[j]])
+            ax2 = fig.add_subplot(2, N, N + j + 1)
+            ax2.imshow(avg_sal_map[j], cmap=plt.cm.hot)
+            #plt.imshow(avg_sal_map[j], cmap=plt.cm.hot)
+            ax2.axis('off')
             #plt.gcf().set_size_inches(12, )
-
-        #figpath = Path('/home/ruta/teeny_data/saliency_big101/map' + ACTION_NAMES[y[i]])
+            plt.show()
+        figpath = Path('/home/shared/workspace/human-activity-recognition/Efficient-3DCNNs/data/results/saliency_maps/average'+ACTION_NAMES[y[j]]+str(i))
+        fig.savefig(figpath)
+        center_frame = int(avg_inputs.shape[1]/2)
+        #for j in range(N):
+        #    plt.subplot(2, N, j + 1)
+        #    plt.imshow(avg_inputs[j,center_frame,:,:])
+        #    plt.axis('off')
+        #    plt.title(ACTION_NAMES[y[j]])
+        #    plt.subplot(2, N, N + j + 1)
+        #    plt.imshow(sal_map[j,center_frame,:,:], cmap=plt.cm.hot)
+        #    plt.axis('off')
+            #plt.gcf().set_size_inches(12, )
+        #    plt.show()
+        #figpath = Path('/home/shared/workspace/human-activity-recognition/Efficient-3DCNNs/data/results/saliency_maps/center'+ACTION_NAMES[y[j]]+str(i))
         #plt.savefig(figpath)
     return None

@@ -29,6 +29,7 @@ def val_epoch(epoch, data_loader, model, criterion, opt, logger):
         outputs = model(inputs)
         loss = criterion(outputs, targets)
         prec1, prec5 = calculate_accuracy(outputs.data, targets.data, topk=(1,5))
+        print("top1 {} top5 {}".format(prec1, prec5))
         top1.update(prec1, inputs.size(0))
         top5.update(prec5, inputs.size(0))
 
@@ -51,10 +52,14 @@ def val_epoch(epoch, data_loader, model, criterion, opt, logger):
                   loss=losses,
                   top1=top1,
                   top5=top5))
-
-    logger.log({'epoch': epoch,
-                'loss': losses.avg.item(),
-                'prec1': top1.avg.item(),
-                'prec5': top5.avg.item()})
+        #logger.log({'epoch': epoch,
+            #'iteration' : i+1,
+            #'loss': losses.avg.item(),
+            #'prec1': top1.avg.item(),
+            #'prec5': top5.avg.item(),
+            #'prec1curr': prec1
+            #})
+    
+    logger.log({'epoch': epoch, 'loss': losses.avg.item(), 'prec1': top1.avg.item(), 'prec5': top5.avg.item()})
 
     return losses.avg.item(), top1.avg.item()

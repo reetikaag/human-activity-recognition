@@ -14,28 +14,31 @@ def launch_training_job(pretrain_path, learning_rate):
     """
     #Create a new folder in parent_dir with unique_name "job_name"
     root_path = "/home/shared/workspace/"
-    pretrain_name = pretrain_path.split('_')[0]
-    model_name = pretrain_path.split('_')[1]
-    model_width = pretrain_path.split('_')[2]
-    print(pretrain_name)
-    print(model_name)
-    print(model_width)
 
-    result_name = model_name + "_" + model_width  + "_" + str(50) + "_" +"full"
+    if pretrain_path == 'c3d':
+        pretrain_name = 'c3d'
+        model_name = 'c3d'
+        model_width = 18
+    else:
+        pretrain_name = pretrain_path.split('_')[0]
+        model_name = pretrain_path.split('_')[1]
+        model_width = pretrain_path.split('_')[2]
+	# Launch training with this config
+        num_classes = 600
+        if pretrain_name == "kinetics":
+            num_classes = 600
+        elif pretrain_name == "jester" :
+            num_classes = 27
+        print(num_classes)
+        print(pretrain_name)
+        print(model_name)
+
+    result_name = model_name + "_" + str(model_width)  + "_" + str(50) + "_" +"full"
     result_dir = os.path.join(root_path, 'human-activity-recognition', 'Efficient-3DCNNs', 'data', 'results', result_name)
     if not os.path.exists(result_dir):
         print(result_dir)
         os.makedirs(result_dir)
 
-
-    # Launch training with this config
-    num_classes = 600
-
-    if pretrain_name == "kinetics":
-        num_classes = 600
-    elif pretrain_name == "jester" :
-        num_classes = 27
-    print(num_classes)
 
     if model_name == 'resnet' or model_name == 'resnext' :
         model_depth = model_width
@@ -43,11 +46,8 @@ def launch_training_job(pretrain_path, learning_rate):
             --video_path Resnet3D/3D-ResNets-PyTorch/data/jpg \
             --annotation_path Resnet3D/3D-ResNets-PyTorch/data/ntu_01.json \
             --result_path {result_dir} \
-            --pretrain_path Resnet3D/3D-ResNets-PyTorch/data/models/{pretrain_path}_RGB_16_best.pth \
             --dataset ucf101 \
-            --n_classes {num_classes} \
-            --n_finetune_classes 9 \
-            --ft_portion last_layer \
+            --n_classes 9 \
             --model {model_name} \
             --groups 3 \
             --model_depth {model_depth} \
@@ -62,7 +62,7 @@ def launch_training_job(pretrain_path, learning_rate):
             --train_crop center \
             --batch_size 64 \
             --n_epochs 50 \
-            --test".format(result_dir = result_dir, pretrain_path = pretrain_path, num_classes = num_classes,
+            --test".format(result_dir = result_dir, pretrain_path = pretrain_path,
                                  model_name = model_name, model_depth = model_depth, learning_rate = learning_rate)
 
     if model_name == 'mobilenetv2' or model_name == 'shufflenetv2' or model_name == 'squeezenet' :
@@ -70,11 +70,8 @@ def launch_training_job(pretrain_path, learning_rate):
             --video_path Resnet3D/3D-ResNets-PyTorch/data/jpg \
             --annotation_path Resnet3D/3D-ResNets-PyTorch/data/ntu_01.json \
             --result_path {result_dir} \
-            --pretrain_path Resnet3D/3D-ResNets-PyTorch/data/models/{pretrain_path}_RGB_16_best.pth \
             --dataset ucf101 \
-            --n_classes {num_classes} \
-            --n_finetune_classes 9 \
-            --ft_portion last_layer \
+            --n_classes 9 \
             --model {model_name} \
             --groups 3 \
             --width_mult 1.0 \
@@ -89,7 +86,7 @@ def launch_training_job(pretrain_path, learning_rate):
             --n_val_samples 1 \
             --batch_size 64 \
             --n_epochs 50 \
-            --test".format(result_dir = result_dir, pretrain_path = pretrain_path, num_classes = num_classes,
+            --test".format(result_dir = result_dir, pretrain_path = pretrain_path,
                                  model_name = model_name, learning_rate = learning_rate)
 
     if model_name == 'resnet' and model_width == '18' :
@@ -98,11 +95,8 @@ def launch_training_job(pretrain_path, learning_rate):
             --video_path Resnet3D/3D-ResNets-PyTorch/data/jpg \
             --annotation_path Resnet3D/3D-ResNets-PyTorch/data/ntu_01.json \
             --result_path {result_dir} \
-            --pretrain_path Resnet3D/3D-ResNets-PyTorch/data/models/{pretrain_path}_RGB_16_best.pth \
             --dataset ucf101 \
-            --n_classes {num_classes} \
-            --n_finetune_classes 9 \
-            --ft_portion last_layer \
+            --n_classes 9 \
             --model {model_name} \
 	    --resnet_shortcut A \
             --groups 3 \
@@ -118,13 +112,33 @@ def launch_training_job(pretrain_path, learning_rate):
             --train_crop center \
             --batch_size 64 \
             --n_epochs 50 \
-            --test".format(result_dir = result_dir, pretrain_path = pretrain_path, num_classes = num_classes,
+            --test".format(result_dir = result_dir, pretrain_path = pretrain_path,
                                  model_name = model_name, model_depth = model_depth, learning_rate = learning_rate)
+    else:
+        cmd = "python main.py --root_path /home/shared/workspace/ \
+            --video_path Resnet3D/3D-ResNets-PyTorch/data/jpg \
+            --annotation_path Resnet3D/3D-ResNets-PyTorch/data/ntu_01.json \
+            --result_path {result_dir} \
+            --dataset ucf101 \
+            --n_classes 9 \
+            --groups 3 \
+            --learning_rate {learning_rate} \
+            --sample_duration 16 \
+            --downsample 2 \
+            --n_scales 5 \
+            --scale_step 0.97 \
+            --n_threads 16 \
+            --checkpoint 10 \
+            --n_val_samples 1 \
+            --train_crop center \
+            --batch_size 64 \
+            --n_epochs 50 \
+            --test".format(result_dir = result_dir, learning_rate = learning_rate) 
     print(cmd)
     check_call(cmd, shell=True)
 
 if __name__ == '__main__':
     pretrain_path = ['kinetics_mobilenetv2_1.0x', 'kinetics_shufflenetv2_1.0x','kinetics_resnet_101', 'kinetics_resnext_101', 'kinetics_resnet_50', 'kinetics_squeezenet_1.0x', 'kinetics_resnet_18']
     pretrain_path2 = ['kinetics_resnext_101']
-    for p in pretrain_path:
+    for p in ['c3d']:
         launch_training_job(p, 0.001)

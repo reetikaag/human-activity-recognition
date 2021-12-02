@@ -29,7 +29,7 @@ from models import squeezenet, shufflenetv2, shufflenet, mobilenet, mobilenetv2,
 # model = resnet.resnet18(sample_size = 112, sample_duration = 8, num_classes=600)
 # model = resnet.resnet50(sample_size = 112, sample_duration = 8, num_classes=600)
 # model = resnet.resnet101(sample_size = 112, sample_duration = 8, num_classes=600)
-model = resnext.resnext101(sample_size = 112, sample_duration = 8, num_classes=600)
+model = resnext.resnext101(sample_size = 112, sample_duration = 16, num_classes=9)
 
 model = model.cuda()
 model = nn.DataParallel(model, device_ids=None)	

@@ -1,9 +1,6 @@
 # Efficient-3DCNNs
 PyTorch Implementation of the article "[Resource Efficient 3D Convolutional Neural Networks](https://arxiv.org/pdf/1904.02422.pdf)", codes and pretrained models.
 
-## Update!
-
-
 ## Requirements
 
 * [PyTorch 1.0.1.post2](http://pytorch.org/)
@@ -27,15 +24,9 @@ Implemented models:
  - ResNext-101
  
 
-## Results
 
-<p align="center"><img src="https://github.com/okankop/Efficient-3DCNNs/blob/master/utils/results.png" align="middle" width="900" title="Results of Efficient 3DCNNs" /></p>
 
 ## Dataset Preparation
-
-
-
-### UCF-101
 
 * Convert from avi to jpg files using ```utils/video_jpg_ucf101_hmdb51.py```
 
@@ -49,7 +40,7 @@ python utils/video_jpg_ucf101_hmdb51.py avi_video_directory jpg_video_directory
 python utils/n_frames_ucf101_hmdb51.py jpg_video_directory
 ```
 
-* Generate annotation file in json format similar to ActivityNet using ```utils/ucf101_json.py```
+* Generate annotation file in json format using ```utils/ucf101_json.py```
   * ```annotation_dir_path``` includes classInd.txt, trainlist0{1, 2, 3}.txt, testlist0{1, 2, 3}.txt
 
 ```bash
@@ -149,7 +140,7 @@ There are several augmentation techniques available. Please check spatial_transf
 
 ### Calculating Video Accuracy
 
-In order to calculate viceo accuracy, you should first run the models with '--test' mode in order to create 'val.json'. Then, you need to run 'video_accuracy.py' in utils folder to calculate video accuracies. 
+In order to calculate viceo accuracy, you should first run the models with '--test' mode in order to create 'val.json'. Then, you need to run 'ntu_video_accuracy.py' in utils folder to calculate video accuracies. 
 
 ### Calculating FLOPs
 

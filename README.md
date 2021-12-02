@@ -63,9 +63,9 @@ Refer to saved images to see the model structure - Efficient-3DCNNs/c3d, resnet1
 
 ## Paper Results
 ### Accuracy/loss/learning rate of training and validation set for a sample model (ResNeXt-101)
-<p align="center"><img src="https://github.com/reetikaag/human-activity-recognition/blob/main/Efficient-3DCNNs/result_images/loss.png" width="300" title="Loss of training and validation for a sample model (ResNeXt-101)" /><img src="https://github.com/reetikaag/human-activity-recognition/blob/main/Efficient-3DCNNs/result_images/accuracy.png" width="300" title="Accuracy of training and validation for a sample model (ResNeXt-101)" /></p>
+<p align="center"><img src="https://github.com/reetikaag/human-activity-recognition/blob/main/Efficient-3DCNNs/result_images/loss.png" width="400" title="Loss of training and validation for a sample model (ResNeXt-101)" /><img src="https://github.com/reetikaag/human-activity-recognition/blob/main/Efficient-3DCNNs/result_images/accuracy.png" width="400" title="Accuracy of training and validation for a sample model (ResNeXt-101)" /></p>
 
-<p align="center"><img src="https://github.com/reetikaag/human-activity-recognition/blob/main/Efficient-3DCNNs/result_images/learning_rate.png" align="left" width="400" title="Results of pre-training for action recognition task" /></p>
+<p align="center"><img src="https://github.com/reetikaag/human-activity-recognition/blob/main/Efficient-3DCNNs/result_images/learning_rate.png" width="400" title="Results of pre-training for action recognition task" /><img src="https://github.com/reetikaag/human-activity-recognition/blob/main/Efficient-3DCNNs/result_images/learning_rate.png" width="400" title="Results of pre-training for action recognition task" /></p>
 
 ### Results of pre-training for action classification task
 <p align="center"><img src="https://github.com/reetikaag/human-activity-recognition/blob/main/Efficient-3DCNNs/result_images/pretrained.png" align="middle" width="900" title="Results of pre-training for action recognition task" /></p>

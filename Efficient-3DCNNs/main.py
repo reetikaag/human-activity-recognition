@@ -189,7 +189,7 @@ if __name__ == '__main__':
                                  target_transform)
         test_loader = torch.utils.data.DataLoader(
             test_data,
-            batch_size=16,
+            batch_size=1,
             shuffle=False,
             num_workers=opt.n_threads,
             pin_memory=True)

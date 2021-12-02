@@ -128,5 +128,5 @@ def launch_training_job(pretrain_path, learning_rate):
 if __name__ == '__main__':
     pretrain_path = ['kinetics_mobilenetv2_1.0x', 'kinetics_shufflenetv2_1.0x','kinetics_resnet_101', 'kinetics_resnext_101', 'kinetics_resnet_50', 'kinetics_squeezenet_1.0x', 'kinetics_resnet_18']
     pretrain_path2 = ['kinetics_resnet_101']
-    for p in pretrain_path :
+    for p in pretrain_path2 :
         launch_training_job(p, 0.001)

@@ -63,7 +63,7 @@ Refer to saved images to see the model structure - Efficient-3DCNNs/c3d, resnet1
 
 ## Paper Results
 ### Accuracy/loss/learning rate of training and validation set for a sample model (ResNeXt-101)
-<p align="center"><img src="https://github.com/reetikaag/human-activity-recognition/blob/main/Efficient-3DCNNs/result_images/loss.png" align="left" width="400" title="Loss of training and validation for a sample model (ResNeXt-101)" /><img src="https://github.com/reetikaag/human-activity-recognition/blob/main/Efficient-3DCNNs/result_images/accuracy.png" align="right" width="400" title="Accuracy of training and validation for a sample model (ResNeXt-101)" /></p>
+<p align="center"><img src="https://github.com/reetikaag/human-activity-recognition/blob/main/Efficient-3DCNNs/result_images/loss.png" width="300" title="Loss of training and validation for a sample model (ResNeXt-101)" /><img src="https://github.com/reetikaag/human-activity-recognition/blob/main/Efficient-3DCNNs/result_images/accuracy.png" width="300" title="Accuracy of training and validation for a sample model (ResNeXt-101)" /></p>
 
 <p align="center"><img src="https://github.com/reetikaag/human-activity-recognition/blob/main/Efficient-3DCNNs/result_images/learning_rate.png" align="left" width="400" title="Results of pre-training for action recognition task" /></p>
 

@@ -59,7 +59,7 @@ Efficient-3DCNNs/Evaluate_metrics.ipynb/
 Efficient-3DCNNs/Hyperparameters.ipynb/
 ```
 ## Model structure and no of FLOPS, parameters of each model
-Refer to saved images to see the model structure - Efficient-3DCNNs/c3d, resnet18, resnet50, resnet101, resnext101, mobilenetv2, shufflenetv2, squeezenet
+Refer to saved images to see the model structure - Efficient-3DCNNs/model_structure/c3d, resnet18, resnet50, resnet101, resnext101, mobilenetv2, shufflenetv2, squeezenet
 
 ## Paper Results
 ### Accuracy/loss/learning rate of training and validation set for a sample model (ResNeXt-101)

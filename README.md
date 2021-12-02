@@ -62,18 +62,22 @@ Efficient-3DCNNs/Hyperparameters.ipynb/
 Refer to saved images to see the model structure - Efficient-3DCNNs/c3d, resnet18, resnet50, resnet101, resnext101, mobilenetv2, shufflenetv2, squeezenet
 
 ## Paper Results
-<p align="center"><img src="https://github.com/reetikaag/human-activity-recognition/blob/main/Efficient-3DCNNs/result_images/loss.png" align="left" width="400" title="Loss of training and validation for a sample model (ResNeXt-101)" /></p>
-
-<p align="center"><img src="https://github.com/reetikaag/human-activity-recognition/blob/main/Efficient-3DCNNs/result_images/accuracy.png" align="right" width="400" title="Accuracy of training and validation for a sample model (ResNeXt-101)" /></p>
+### Accuracy/loss/learning rate of training and validation set for a sample model (ResNeXt-101)
+<p align="center"><img src="https://github.com/reetikaag/human-activity-recognition/blob/main/Efficient-3DCNNs/result_images/loss.png" align="left" width="400" title="Loss of training and validation for a sample model (ResNeXt-101)" /><img src="https://github.com/reetikaag/human-activity-recognition/blob/main/Efficient-3DCNNs/result_images/accuracy.png" align="right" width="400" title="Accuracy of training and validation for a sample model (ResNeXt-101)" /></p>
 
 <p align="center"><img src="https://github.com/reetikaag/human-activity-recognition/blob/main/Efficient-3DCNNs/result_images/learning_rate.png" align="left" width="400" title="Results of pre-training for action recognition task" /></p>
 
+### Results of pre-training for action classification task
 <p align="center"><img src="https://github.com/reetikaag/human-activity-recognition/blob/main/Efficient-3DCNNs/result_images/pretrained.png" align="middle" width="900" title="Results of pre-training for action recognition task" /></p>
 
+### Effect of model depth on accuracy
 <p align="center"><img src="https://github.com/reetikaag/human-activity-recognition/blob/main/Efficient-3DCNNs/result_images/model_depth.png" align="middle" width="500" title="Effect of model depth on accuracy for ResNet 3D" /></p>
 
+### Confusion matrix for ResNet-101
 <p align="center"><img src="https://github.com/reetikaag/human-activity-recognition/blob/main/Efficient-3DCNNs/result_images/confusion_matrix.png" align="middle" width="900" title="Confusion Matrix for ResNet-101 on 9 action classes" /></p>
 
+### Saliency map for a few action classes
 <p align="center"><img src="https://github.com/reetikaag/human-activity-recognition/blob/main/Efficient-3DCNNs/result_images/saliency_map.png" align="middle" width="900" title="Saliency Map for ResNet-101" /></p>
 
+### Results on our own dataset
 <p align="center"><img src="https://github.com/reetikaag/human-activity-recognition/blob/main/Efficient-3DCNNs/result_images/our_dataset_results.png" align="left" width="900" title="Results of our own dataset" /></p>
